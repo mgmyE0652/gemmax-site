@@ -2,16 +2,18 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "images"
+public_folder: "/images"
 
 collections:
-  - name: "urunler"
-    label: "Ürünler"
-    folder: "content/urunler"
+  - name: "kategoriler"
+    label: "Kategori ve Site Sayfaları"
+    folder: "content/kategoriler"
     create: true
     fields:
-      - {label: "Ürün Adı", name: "title", widget: "string"}
-      - {label: "Tutuş Kapasitesi (kg)", name: "tutus", widget: "string", required: false}
-      - {label: "Ürün Görseli", name: "image", widget: "image"}
-      - {label: "Ürün Açıklaması", name: "body", widget: "markdown"}
+      - {label: "Sayfa / Kategori Adı", name: "title", widget: "string"}
+      - {label: "URL Yolu (Slug)", name: "slug", widget: "string"}
+      - label: "Görsel ve İçerik Düzenleyici"
+        name: "body"
+        widget: "markdown"
+        hint: "Buraya metinlerin yanı sıra HTML kodları, görsel linkleri ve videolarınızı ekleyebilirsiniz."
