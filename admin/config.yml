@@ -6,17 +6,18 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  # 1. Ürünler (Çoklu ürün ekleyip silebileceğiniz klasör yapısı)
+  # 1. Ürünler Bölümü (Sınırsız ürün ekleyip düzenleyebileceğiniz alan)
   - name: "urunler"
     label: "Ürünler"
     folder: "content/urunler"
     create: true
+    slug: "{{slug}}"
     fields:
       - {label: "Ürün Adı", name: "title", widget: "string"}
-      - {label: "Görsel", name: "image", widget: "image"}
+      - {label: "Ürün Görseli", name: "image", widget: "image"}
       - {label: "Açıklama", name: "body", widget: "markdown"}
 
-  # 2. Site Sayfaları (Ana Sayfa, Kurumsal, Çözüm Alanları, İletişim)
+  # 2. Site Sayfaları (Ana Sayfa, Kurumsal, İletişim vb.)
   - name: "sayfalar"
     label: "Site Sayfaları"
     files:
@@ -25,18 +26,11 @@ collections:
         name: "anasayfa"
         fields:
           - {label: "Sayfa Başlığı", name: "title", widget: "string"}
-          - {label: "Ana İçerik / Yazı", name: "body", widget: "markdown"}
+          - {label: "İçerik", name: "body", widget: "markdown"}
 
       - file: "kurumsal.html"
         label: "Kurumsal"
         name: "kurumsal"
-        fields:
-          - {label: "Başlık", name: "title", widget: "string"}
-          - {label: "Kurumsal İçerik", name: "body", widget: "markdown"}
-
-      - file: "cozum-alanlari.html"
-        label: "Çözüm Alanları"
-        name: "cozum_alanlari"
         fields:
           - {label: "Başlık", name: "title", widget: "string"}
           - {label: "İçerik", name: "body", widget: "markdown"}
@@ -46,4 +40,4 @@ collections:
         name: "iletisim"
         fields:
           - {label: "Başlık", name: "title", widget: "string"}
-          - {label: "İletişim Bilgileri / Metni", name: "body", widget: "markdown"}
+          - {label: "İçerik", name: "body", widget: "markdown"}
