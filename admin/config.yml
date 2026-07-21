@@ -6,7 +6,7 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  # 1. Ürünler Bölümü (Sınırsız ürün ekleyip düzenleyebileceğiniz alan)
+  # 1. Ürün Yönetimi (Yeni ürün ekleme, silme, görsel yükleme)
   - name: "urunler"
     label: "Ürünler"
     folder: "content/urunler"
@@ -15,9 +15,10 @@ collections:
     fields:
       - {label: "Ürün Adı", name: "title", widget: "string"}
       - {label: "Ürün Görseli", name: "image", widget: "image"}
-      - {label: "Açıklama", name: "body", widget: "markdown"}
+      - {label: "Kategori", name: "category", widget: "select", options: ["Manyetik Kilitler", "Geçiş Kontrol", "Güvenlik Sistemleri"]}
+      - {label: "Ürün Açıklaması", name: "body", widget: "markdown"}
 
-  # 2. Site Sayfaları (Ana Sayfa, Kurumsal, İletişim vb.)
+  # 2. Site Sayfaları Yönetimi (Ana Sayfa, Kurumsal, İletişim)
   - name: "sayfalar"
     label: "Site Sayfaları"
     files:
@@ -26,18 +27,18 @@ collections:
         name: "anasayfa"
         fields:
           - {label: "Sayfa Başlığı", name: "title", widget: "string"}
-          - {label: "İçerik", name: "body", widget: "markdown"}
+          - {label: "Ana Slogan / Metin", name: "body", widget: "markdown"}
 
       - file: "kurumsal.html"
         label: "Kurumsal"
         name: "kurumsal"
         fields:
           - {label: "Başlık", name: "title", widget: "string"}
-          - {label: "İçerik", name: "body", widget: "markdown"}
+          - {label: "Kurumsal İçerik", name: "body", widget: "markdown"}
 
       - file: "iletisim.html"
         label: "İletişim"
         name: "iletisim"
         fields:
           - {label: "Başlık", name: "title", widget: "string"}
-          - {label: "İçerik", name: "body", widget: "markdown"}
+          - {label: "İletişim Bilgileri", name: "body", widget: "markdown"}
